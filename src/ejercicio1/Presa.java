@@ -1,11 +1,14 @@
 package ejercicio1;
 
 public abstract class Presa {
-    
-    public String alimentar(String alimento){
-        
-        String comida = alimento;
-        return "Me alimento de " + comida;       
+
+    private String alimento;
+
+    public String alimentar() {
+        return "Me alimento de " + getAlimento();
     }
-    
+
+    public String getAlimento() {
+        return alimento;
+    }
 }

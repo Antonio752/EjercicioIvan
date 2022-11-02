@@ -18,11 +18,13 @@ public class Ejercicio1 {
                         tipoAnimal = "perro";
                         Animal perro = FactoriaAnimal.crearAnimal(tipoAnimal);
                         emitirSonido(perro);
+                        alimentar(perro);
                         break;
                     case 2:
                         tipoAnimal = "gato";
                         Animal gato = FactoriaAnimal.crearAnimal(tipoAnimal);
                         emitirSonido(gato);
+                        alimentar(gato);
                         break;
                 }
 
@@ -37,19 +39,22 @@ public class Ejercicio1 {
 
         System.out.println(animal.emitirSonido());
     }
+    
+    public static void alimentar(Animal animal) {
+
+        Presa presa = (Presa) animal;
+        System.out.println(presa.alimentar());
+    }
 
     public static boolean isNumeric(String cadena) {
 
         boolean resultado;
-
         try {
             Integer.parseInt(cadena);
             resultado = true;
         } catch (NumberFormatException excepcion) {
             resultado = false;
         }
-
         return resultado;
     }
-
 }
