@@ -4,6 +4,9 @@ import java.util.*;
 
 public class Ejercicio1 {
 
+    private static Animal animal;
+    private static Presa presa;
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         String tipoAnimal, cadena;
@@ -16,15 +19,15 @@ public class Ejercicio1 {
                 switch (opcion) {
                     case 1:
                         tipoAnimal = "perro";
-                        Animal perro = FactoriaAnimal.crearAnimal(tipoAnimal);
-                        emitirSonido(perro);
-                        alimentar(perro);
+                        animal = crearAnimal(tipoAnimal);
+                        emitirSonido(animal);
+                        alimentar(animal);
                         break;
                     case 2:
                         tipoAnimal = "gato";
-                        Animal gato = FactoriaAnimal.crearAnimal(tipoAnimal);
-                        emitirSonido(gato);
-                        alimentar(gato);
+                        animal = crearAnimal(tipoAnimal);
+                        emitirSonido(animal);
+                        alimentar(animal);
                         break;
                 }
 
@@ -42,8 +45,13 @@ public class Ejercicio1 {
     
     public static void alimentar(Animal animal) {
 
-        Presa presa = (Presa) animal;
+        presa = (Presa) animal;
         System.out.println(presa.alimentar());
+    }
+    
+    public static Animal crearAnimal(String tipoAnimal){
+        animal = FactoriaAnimal.crearAnimal(tipoAnimal);
+        return animal;
     }
 
     public static boolean isNumeric(String cadena) {

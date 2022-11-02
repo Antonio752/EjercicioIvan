@@ -1,7 +1,7 @@
 package ejercicio1;
 
 public class Gato extends Presa implements Animal{
-    
+     
     @Override
     public String emitirSonido(){
         return "Guau, soy un gato";
